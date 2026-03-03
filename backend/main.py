@@ -15,11 +15,11 @@ app = FastAPI()
 #this allows your react front ends to talk to your backend
 app.add_middleware(
     CORSMiddleware,
-    #allows this ip to communicunite with backend, this is react front ends address
-    allow_origins=["http://localhost:5173"],
-    #allow cookies and auth headers to be sent
+    allow_origins=[
+        "http://localhost:5173",
+        "https://job-application-assistant-silk.vercel.app"
+    ],
     allow_credentials=True,
-    # * means allow all 
     allow_methods=["*"],
     allow_headers=["*"],
 )

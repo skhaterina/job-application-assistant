@@ -23,7 +23,8 @@ export default function App() {
     setActiveAction("analyze")
     setAnalysis("")
 
-    const response = await fetch("https://job-application-assistant-pw67.onrender.com", {
+    const response = await fetch("https://job-application-assistant-pw67.onrender.com/analyze"
+, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({resume, job_description: jobDescription})
@@ -40,7 +41,7 @@ export default function App() {
     setActiveAction("rewrite")
     setRewritten("")
 
-    const response = await fetch("http://127.0.0.1:8000/rewrite-bullets", {
+    const response = await fetch("https://job-application-assistant-pw67.onrender.com/rewrite-bullets", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({resume, job_description: jobDescription})
